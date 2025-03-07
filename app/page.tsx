@@ -10,45 +10,50 @@ import { Marquee } from "@/components/marquee"
 import { GeometricShapes } from "@/components/geometric-shapes"
 import { ThreeDCard } from "@/components/3d-card"
 import { DecorativeElements } from "@/components/decorative-elements"
-import { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
+import Image from "next/image"
+import Star1 from '@/public/star-1.png';
+import { Toaster } from '@/components/ui/toaster';
 
 const scenarios = [
   {
-    id: "restaurant",
-    title: "Restaurant Ordering",
-    description: "Practice ordering food, asking about menu items, and handling special requests.",
+    id: "HR",
+    title: "HR interview",
     conversation: [
       {
         isUser: false,
-        text: "Hello! Welcome to our restaurant. Are you ready to order?",
+        text: "Thanks for joining today. Can you tell me a bit about your experience with team collaboration on software projects?",
       },
       {
         isUser: true,
-        text: "Yes, I would like the pasta with tomato sauce, but can you make it not too spicy?",
+        text: "Sure! I’ve worked in Agile teams, collaborating with designers and product manager to stay aligned on goals and deliverables.",
+        correction: "\"Product manager\" should be plural (\"product managers\") to match \"designers\" and keep the list consistent.",
       },
       {
         isUser: false,
-        text: "Of course. Would you like any appetizers to start with?",
+        text: "Great! How do you handle tight deadlines when there are unexpected challenges with your code?",
       },
       {
         isUser: true,
-        text: "Yes, I'll take garlic bread please. And can I see wine menu?",
+        text: "I prioritize tasks, communicate early if there’s an issue, and ask for help when needed to stay on track",
       },
       {
         isUser: false,
-        correction: "Yes, I'll take garlic bread please. And can I see the wine menu?",
-        text: "You're missing the article 'the' before 'wine menu'. I'll bring the wine menu right away.",
+        text: "That’s great to hear. Lastly, how do you stay updated with new technologies and trends?",
+      },
+      {
+        isUser: true,
+        text: "I read blogs, take courses, and participate in online communities to keep learning.",
       },
     ],
   },
   {
-    id: "travel",
-    title: "Travel Conversation",
-    description: "Practice asking for directions, booking accommodations, and navigating transportation.",
+    id: "chalamet",
+    title: "Timothée Chalamet",
     conversation: [
       {
         isUser: false,
-        text: "Excuse me, you look lost. Can I help you find something?",
+        text: "Did you see Timothée Chalamet at the Oscars? His zoot suit was... something else",
       },
       {
         isUser: true,
@@ -72,103 +77,52 @@ const scenarios = [
   {
     id: "shopping",
     title: "Shopping Experience",
-    description: "Practice shopping conversations, asking about products, and negotiating prices.",
     conversation: [
       {
-        isUser: false,
+        isUser: true,
         text: "Hi there! Can I help you find anything specific today?",
       },
       {
-        isUser: true,
-        text: "I'm looking for winter jacket. Do you have any on sale?",
-      },
-      {
         isUser: false,
-        correction: "I'm looking for a winter jacket. Do you have any on sale?",
-        text: "You need the article 'a' before 'winter jacket'. Yes, we have several winter jackets on sale in the back section.",
+        text: "Yeah, I couldn’t believe it. It was so unexpected but somehow work!",
+        correction: "\"Work\" should be \"worked\" to match the past tense of the sentence.",
       },
       {
         isUser: true,
-        text: "Great! I prefer something waterproof and warm but not too expensive.",
+        text: "It definitely had a vintage vibe to it. I saw a ton of memes right after",
       },
       {
         isUser: false,
-        text: "I can show you our North Face collection. They're high quality and currently 30% off. Would you like to see them?",
+        text: "I saw one where they compared him to The Matrix. It was hilarious, but honestly, I respect him for taking that risk",
+      },
+      {
+        isUser: true,
+        text: "Same here. Some people weren’t fans, but I think it’s cool to stand out like that",
+      },
+      {
+        isUser: false,
+        text: "Exactly! He owns it. You either love it or you don’t, but you can’t ignore it",
+      },
+      {
+        isUser: true,
+        text: "For sure, he’s got the confidence to pull off a look like that. Not everyone could.",
       },
     ],
   },
 ]
 
-function AutoRotatingScenarios() {
-  const [activeScenario, setActiveScenario] = useState(scenarios[0])
+export default function Home() {
+  const [activeScenarioIndex, setActiveScenarioIndex] = useState(0);
+  const intervalRef = useRef<any>(null);
 
-  // Auto-rotate scenarios
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveScenario((current) => {
-        const currentIndex = scenarios.findIndex((s) => s.id === current.id)
-        const nextIndex = (currentIndex + 1) % scenarios.length
-        return scenarios[nextIndex]
-      })
-    }, 8000) // Rotate every 8 seconds
+    intervalRef.current = setInterval(() => {
+      setActiveScenarioIndex((current) => (current + 1) % scenarios.length)
+    }, 8000)
 
-    return () => clearInterval(interval)
+    return () => clearInterval(intervalRef.current)
   }, [])
 
-  return (
-    <>
-      <div className="flex flex-wrap gap-4 mb-8 justify-center">
-        {scenarios.map((scenario) => (
-          <button
-            key={scenario.id}
-            onClick={() => setActiveScenario(scenario)}
-            className={`px-4 py-2 rounded-full text-sm transition-all ${
-              activeScenario.id === scenario.id ? "bg-neon text-white font-medium" : "bg-gray-100 hover:bg-gray-200"
-            }`}
-          >
-            {scenario.title}
-          </button>
-        ))}
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h4 className="text-xl font-bold mb-3">{activeScenario.title}</h4>
-          <p className="text-medium mb-6">{activeScenario.description}</p>
-          <div className="p-4 bg-gray-50 rounded-lg border border-gray-100">
-            <p className="text-medium text-sm">
-              <span className="text-neon font-bold">Pro tip:</span>{" "}
-              <span className="text-lg">Practice makes perfect!</span> Try this scenario multiple times with different
-              responses to improve your fluency.
-            </p>
-          </div>
-        </div>
-
-        <div className="relative">
-          <div className="absolute -inset-4 bg-neon/10 blur-xl rounded-full"></div>
-          <div className="relative z-10">
-            <ThreeDCard>
-              <MobileDevice>
-                <div className="bg-white h-full w-full p-4 flex flex-col">
-                  <div className="text-sm text-medium mb-2">Scenario: {activeScenario.title}</div>
-                  <div className="flex-1 overflow-y-auto space-y-4">
-                    {activeScenario.conversation.map((message, index) => (
-                      <ConversationBubble key={index} isUser={message.isUser} correction={message.correction}>
-                        {message.text}
-                      </ConversationBubble>
-                    ))}
-                  </div>
-                </div>
-              </MobileDevice>
-            </ThreeDCard>
-          </div>
-        </div>
-      </div>
-    </>
-  )
-}
-
-export default function Home() {
   return (
     <div className="min-h-screen bg-light text-dark overflow-hidden">
       <NoiseBackground />
@@ -183,16 +137,16 @@ export default function Home() {
           </div>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#problem" className="text-sm hover:text-neon transition-colors">
+          <Link href="#problem" className="text-medium hover:text-neon transition-colors">
             Problem
           </Link>
-          <Link href="#solution" className="text-sm hover:text-neon transition-colors">
+          <Link href="#solution" className="text-medium hover:text-neon transition-colors">
             Solution
           </Link>
-          <Link href="#how" className="text-sm hover:text-neon transition-colors">
+          <Link href="#how" className="text-medium hover:text-neon transition-colors">
             How It Works
           </Link>
-          <Link href="#waitlist" className="text-sm hover:text-neon transition-colors">
+          <Link href="#waitlist" className="text-medium hover:text-neon transition-colors">
             Join Waitlist
           </Link>
         </nav>
@@ -361,12 +315,99 @@ export default function Home() {
               </div>
 
               <div className="mb-16 -mx-4 sm:-mx-8 md:-mx-16 lg:-mx-24">
-                <div className="bg-white/80 shadow-xl p-6 md:p-10 rounded-2xl backdrop-blur-md">
-                  <h3 className="text-3xl font-bold mb-6 text-center">
-                    Choose a scenario to practice
-                  </h3>
+                <div className="bg-white/80 rounded-2xl backdrop-blur-md shadow-xl p-6 md:p-10">
 
-                  <AutoRotatingScenarios />
+                  <div className="grid md:grid-cols-12 gap-8 items-center">
+                    {/* Left side - Phone */}
+                    <div className="md:col-span-5 relative">
+                      <div className="absolute -inset-4 bg-neon/10 blur-xl rounded-full"></div>
+                      <div className="relative z-10 flex justify-center">
+                        <ThreeDCard>
+                          <MobileDevice>
+                            <div className="bg-white h-full w-full p-4 flex flex-col">
+                              {/*<div className="text-sm text-medium mb-2">*/}
+                              {/*  Scenario: {scenarios[activeScenarioIndex].title}*/}
+                              {/*</div>*/}
+                              <div className="flex-1 overflow-y-auto space-y-4">
+                                {scenarios[activeScenarioIndex].conversation.map((message, index) => (
+                                  <ConversationBubble
+                                    key={index}
+                                    isUser={message.isUser}
+                                    correction={message.correction}
+                                  >
+                                    {message.text}
+                                  </ConversationBubble>
+                                ))}
+                              </div>
+                            </div>
+                          </MobileDevice>
+                        </ThreeDCard>
+                      </div>
+                    </div>
+
+                    {/* Right side - Features */}
+                    <div className="md:col-span-7">
+                      <h3 className="text-2xl font-bold mb-6 text-center">
+                        <span className="text-neon">Choose a scenario</span> to practice
+                      </h3>
+                      <div className="flex flex-wrap gap-4 mb-6 justify-center md:justify-start">
+                        {scenarios.map((scenario, index) => (
+                          <button
+                            key={scenario.id}
+                            onClick={() => setActiveScenarioIndex(index)}
+                            className={`px-4 py-2 rounded-full text-sm transition-all ${
+                              activeScenarioIndex === index
+                                ? "bg-neon text-white font-medium"
+                                : "bg-gray-100 hover:bg-gray-200"
+                            }`}
+                          >
+                            {scenario.title}
+                          </button>
+                        ))}
+                      </div>
+
+                      <div className="space-y-6">
+                        <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
+                          <h4 className="text-lg font-bold mb-2 flex items-center">
+                            <span className="text-neon mr-2">
+                              <Image src={Star1} width={30} height={30} alt="" />
+                            </span>
+                            Real-time Corrections
+                          </h4>
+                          <p className="text-medium">
+                            Get instant feedback on your grammar, vocabulary, and pronunciation mistakes as you practice
+                            conversations.
+                          </p>
+                        </div>
+
+                        <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
+                          <h4 className="text-lg font-bold mb-2 flex items-center">
+                            <span className="text-neon mr-2">
+                              <Image src={Star1} width={30} height={30} alt="" />
+                            </span>
+                            Discuss anything
+                          </h4>
+                          <p className="text-medium">
+                            Choose from a variety of scenarios or create your own custom conversations based on your
+                            specific needs and interests.
+                          </p>
+                        </div>
+
+                        <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
+                          <h4 className="text-lg font-bold mb-2 flex items-center">
+                            <span className="text-neon mr-2">
+                              <Image src={Star1} width={30} height={30} alt="" />
+                            </span>
+                            Practice Anytime
+                          </h4>
+                          <p className="text-medium">
+                            Available 24/7, allowing you to practice English conversations whenever and wherever you
+                            want, at your own pace.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -529,6 +570,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <Toaster />
     </div>
   )
 }
