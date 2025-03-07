@@ -210,7 +210,7 @@ export default function Home() {
         <section className="relative pt-20 pb-32 overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center justify-center">
-              <div className="inline-flex items-center bg-gray-100 rounded-full px-3 py-1 mb-8">
+              <div className="inline-flex items-center bg-gray-200 rounded-full px-3 py-1 mb-8">
                 <span className="w-4 h-4 bg-neon rounded-full mr-2"></span>
                 <span className="text-sm font-medium">We're launching soon</span>
                 <Link href="#waitlist" className="text-sm text-neon ml-2 font-medium">
@@ -240,7 +240,7 @@ export default function Home() {
                 </Button>
                 <Button
                   size="lg"
-                  className="bg-white border-black text-black hover:bg-gray-50 text-lg px-8 py-6 rounded-full"
+                  className="bg-white border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6 rounded-full"
                   asChild
                 >
                   <Link href="https://dariadiachuk.youcanbook.me/">
@@ -288,11 +288,11 @@ export default function Home() {
         {/* Problem Section */}
         <section id="problem" className="py-24 relative">
           <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row gap-16">
                 <div className="flex-1">
                   <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    Traditional language apps <span className="text-stroke">suck</span>
+                    Traditional language apps <span className="text-neon">suck</span>
                   </h2>
                   <p className="text-xl text-medium mb-8">
                     They focus on vocabulary and grammar, but <span className="text-neon">fail miserably</span> at
@@ -301,7 +301,7 @@ export default function Home() {
                 </div>
                 <div className="flex-1">
                   <div className="space-y-8">
-                    <ThreeDCard className="gradient-border">
+                    <ThreeDCard>
                       <div className="light-card p-6 rounded-xl backdrop-blur-sm">
                         <div className="text-2xl font-bold mb-3">No real speaking practice</div>
                         <p className="text-medium">
@@ -310,7 +310,7 @@ export default function Home() {
                         </p>
                       </div>
                     </ThreeDCard>
-                    <ThreeDCard className="gradient-border">
+                    <ThreeDCard>
                       <div className="light-card p-6 rounded-xl backdrop-blur-sm">
                         <div className="text-2xl font-bold mb-3">Generic scenarios</div>
                         <p className="text-medium">
@@ -319,7 +319,7 @@ export default function Home() {
                         </p>
                       </div>
                     </ThreeDCard>
-                    <ThreeDCard className="gradient-border">
+                    <ThreeDCard>
                       <div className="light-card p-6 rounded-xl backdrop-blur-sm">
                         <div className="text-2xl font-bold mb-3">No personalized feedback</div>
                         <p className="text-medium">
@@ -342,18 +342,18 @@ export default function Home() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                  <span className="text-neon">Explore</span> is your 24/7 AI English tutor
+                  <span className="text-neon">Explore</span> is your safe space for English practice
                 </h2>
                 <p className="text-xl text-medium max-w-2xl mx-auto">
-                  Practice speaking on <span className="text-neon">any topic you choose</span> and get instant feedback
+                  Discuss any topic you <span className="text-neon">passionate</span> about and get instant feedback
                   to improve your fluency.
                 </p>
               </div>
 
               <div className="mb-16 -mx-4 sm:-mx-8 md:-mx-16 lg:-mx-24">
                 <div className="bg-white/80 shadow-xl p-6 md:p-10 rounded-2xl backdrop-blur-md">
-                  <h3 className="text-2xl font-bold mb-6 text-center">
-                    <span className="text-neon">Choose a scenario</span> to practice
+                  <h3 className="text-3xl font-bold mb-6 text-center">
+                    Choose a scenario to practice
                   </h3>
 
                   <AutoRotatingScenarios />
