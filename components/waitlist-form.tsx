@@ -37,10 +37,10 @@ export default function WaitlistForm() {
     setIsSubmitting(true)
 
     try {
-      // await fetch(`${MAILCHIMP_URL}&EMAIL=${encodeURIComponent(email)}`, {
-      //   method: 'POST',
-      //   mode: 'no-cors'
-      // });
+      await fetch(`${MAILCHIMP_URL}&EMAIL=${encodeURIComponent(email)}`, {
+        method: 'POST',
+        mode: 'no-cors'
+      });
 
       setShowSuccessDialog(true)
       setEmail("");
