@@ -15,12 +15,12 @@ export function Marquee() {
     <div className="relative py-6 overflow-hidden bg-neon/5">
       <div className="animate-marquee whitespace-nowrap">
         {items.map((item, index) => (
-          <span key={index} className="text-lg mx-8 inline-block text-medium">
+          <span key={index} className="text-2xl mx-8 inline-block text-medium">
             {item} <span className="text-neon text-2xl mx-2">•</span>
           </span>
         ))}
         {items.map((item, index) => (
-          <span key={`repeat-${index}`} className="text-lg mx-8 inline-block text-medium">
+          <span key={`repeat-${index}`} className="text-2xl mx-8 inline-block text-medium">
             {item} <span className="text-neon text-2xl mx-2">•</span>
           </span>
         ))}

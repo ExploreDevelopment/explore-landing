@@ -14,7 +14,7 @@ export function ConversationBubble({ children, isUser, correction }: Conversatio
           isUser ? "bg-neon text-white rounded-br-none" : "bg-gray-100 text-dark rounded-bl-none"
         }`}
       >
-        <div className="text-sm">{children}</div>
+        <div className="text-xs">{children}</div>
 
         {correction && (
           <div className={`mt-2 pt-2 text-xs ${isUser ? "border-t border-white/20" : "border-t border-gray-300"}`}>

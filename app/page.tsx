@@ -225,7 +225,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl text-medium mb-8 max-w-2xl text-center">
-                Create your own scenarios to practice real-life conversations and get instant feedback on your mistakes.
+                Overcome the language barrier with an AI assistant that adapts to your learning needs
               </p>
 
               <div className="flex gap-4">
@@ -257,20 +257,30 @@ export default function Home() {
                   <ThreeDCard className="w-full max-w-md">
                     <MobileDevice showAIVisual={true}>
                       <div className="bg-white h-full w-full p-4 flex flex-col">
-                        <div className="text-sm text-medium mb-2">Scenario: Restaurant Ordering</div>
+                        {/*<div className="text-sm text-medium mb-2">Scenario: Restaurant Ordering</div>*/}
                         <div className="flex-1 overflow-y-auto space-y-4">
                           <ConversationBubble isUser={false}>
-                            Hello! Welcome to our restaurant. Do you have a reservation?
-                          </ConversationBubble>
-                          <ConversationBubble isUser={true}>
-                            No, I don't have reservation. Do you have table for two?
+                            Did you see Timothée Chalamet at the Oscars? His zoot suit was... something else
                           </ConversationBubble>
                           <ConversationBubble
-                            isUser={false}
-                            correction="No, I don't have a reservation. Do you have a table for two?"
-                          >
-                            You're missing articles. It should be "a reservation" and "a table". Let me check if we have
-                            a table available.
+                            isUser={true}
+                            correction={`"Work" should be "worked" to match the past tense of the sentence.`}>
+                            Yeah, I couldn’t believe it. It was so unexpected but somehow work!
+                          </ConversationBubble>
+                          <ConversationBubble isUser={false}>
+                            It definitely had a vintage vibe to it. I saw a ton of memes right after.
+                          </ConversationBubble>
+                          <ConversationBubble isUser={true}>
+                          I saw one where they compared him to The Matrix. It was hilarious, but honestly, I respect him for taking that risk.
+                          </ConversationBubble>
+                          <ConversationBubble isUser={false}>
+                            Same here. Some people weren’t fans, but I think it’s cool to stand out like that.
+                          </ConversationBubble>
+                          <ConversationBubble isUser={true}>
+                            Exactly! He owns it. You either love it or you don’t, but you can’t ignore it.
+                          </ConversationBubble>
+                          <ConversationBubble isUser={false}>
+                            For sure, he’s got the confidence to pull off a look like that. Not everyone could.
                           </ConversationBubble>
                         </div>
                       </div>
@@ -385,7 +395,7 @@ export default function Home() {
                       1
                     </div>
                     <div className="pt-6">
-                      <h3 className="text-2xl font-bold mb-4 text-center">Choose Your Scenario</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-center">Create Your Scenario</h3>
                       <p className="text-medium text-center">
                         Select from templates or create your own <span className="text-neon">custom</span> conversation
                         scenarios.
@@ -402,8 +412,7 @@ export default function Home() {
                     <div className="pt-6">
                       <h3 className="text-2xl font-bold mb-4 text-center">Practice Speaking</h3>
                       <p className="text-medium text-center">
-                        Have natural conversations with your AI tutor who adapts to{" "}
-                        <span className="text-neon">your level</span>.
+                        Practice dialogues that prepare you for <span className="text-neon">real-world</span> situations.
                       </p>
                     </div>
                   </div>
@@ -437,15 +446,15 @@ export default function Home() {
                 <h2 className="text-4xl md:text-6xl font-bold mb-6">
                   Why choose <span className="text-neon">Explore</span>
                 </h2>
-                <p className="text-xl text-medium max-w-2xl mx-auto">
-                  Our unique approach to language learning <span className="text-neon">blows the competition away</span>
+                <p className="text-xl text-medium max-w-full mx-auto">
+                  Our unique approach to language learning <span className="text-neon">blows</span> the competition away
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Personalized Learning</div>
+                    <div className="text-2xl font-bold mb-4">Designed just for you</div>
                     <p className="text-medium">
                       Practice exactly what you need based on your interests, profession, and learning goals.{" "}
                       <span className="text-neon">No more generic lessons!</span>
@@ -494,7 +503,7 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                Unlock your <span className="text-neon">English potential</span> today
+                <span className="text-neon">Unleash</span> your English power <span className="text-neon">now</span>
               </h2>
               <p className="text-xl text-medium mb-8 max-w-2xl mx-auto">
                 Be among the first to experience Explore and take your English speaking skills to the{" "}
