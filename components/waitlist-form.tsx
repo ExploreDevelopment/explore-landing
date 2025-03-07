@@ -44,6 +44,7 @@ export default function WaitlistForm() {
 
       setShowSuccessDialog(true)
       setEmail("");
+
     } catch (error) {
       toast({
         title: "Something went wrong",
