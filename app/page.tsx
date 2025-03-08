@@ -56,33 +56,6 @@ const scenarios = [
         text: "Did you see Timothée Chalamet at the Oscars? His zoot suit was... something else",
       },
       {
-        isUser: true,
-        text: "Yes, I'm trying to find the museum of modern art. Is it far from here?",
-      },
-      {
-        isUser: false,
-        text: "It's about a 15-minute walk. Do you want me to give you directions?",
-      },
-      {
-        isUser: true,
-        text: "Yes please. I'm not familiar with this area. Is there bus that goes there?",
-      },
-      {
-        isUser: false,
-        correction: "Yes please. I'm not familiar with this area. Is there a bus that goes there?",
-        text: "You need the article 'a' before 'bus'. Yes, bus number 42 stops right in front of the museum.",
-      },
-    ],
-  },
-  {
-    id: "shopping",
-    title: "Shopping Experience",
-    conversation: [
-      {
-        isUser: true,
-        text: "Hi there! Can I help you find anything specific today?",
-      },
-      {
         isUser: false,
         text: "Yeah, I couldn’t believe it. It was so unexpected but somehow work!",
         correction: "\"Work\" should be \"worked\" to match the past tense of the sentence.",
@@ -106,6 +79,33 @@ const scenarios = [
       {
         isUser: true,
         text: "For sure, he’s got the confidence to pull off a look like that. Not everyone could.",
+      },
+    ],
+  },
+  {
+    id: "shopping",
+    title: "Shopping Experience",
+    conversation: [
+      {
+        isUser: false,
+        text: "Hi there! Can I help you find anything specific today?",
+      },
+      {
+        isUser: true,
+        text: "I'm looking for winter jacket. Do you have any on sale?",
+        correction: "You need the article 'a' before 'winter jacket'"
+      },
+      {
+        isUser: false,
+        text: "Yes, we have several winter jackets on sale in the back section.",
+      },
+      {
+        isUser: true,
+        text: "Great! I prefer something waterproof and warm but not too expensive.",
+      },
+      {
+        isUser: false,
+        text: "I can show you our North Face collection. They're high quality and currently 30% off. Would you like to see them?",
       },
     ],
   },
