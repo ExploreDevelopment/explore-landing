@@ -12,7 +12,7 @@ import { ThreeDCard } from "@/components/3d-card"
 import { DecorativeElements } from "@/components/decorative-elements"
 import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
-import Star1 from '@/public/star-1.png';
+import Star4 from '@/public/star-4.png';
 import { Toaster } from '@/components/ui/toaster';
 
 const scenarios = [
@@ -26,7 +26,7 @@ const scenarios = [
       },
       {
         isUser: true,
-        text: "Sure! I’ve worked in Agile teams, collaborating with designers and product manager to stay aligned on goals and deliverables.",
+        text: "Sure! I've worked in Agile teams, collaborating with designers and product manager to stay aligned on goals and deliverables.",
         correction: "\"Product manager\" should be plural (\"product managers\") to match \"designers\" and keep the list consistent.",
       },
       {
@@ -35,11 +35,11 @@ const scenarios = [
       },
       {
         isUser: true,
-        text: "I prioritize tasks, communicate early if there’s an issue, and ask for help when needed to stay on track",
+        text: "I prioritize tasks, communicate early if there's an issue, and ask for help when needed to stay on track",
       },
       {
         isUser: false,
-        text: "That’s great to hear. Lastly, how do you stay updated with new technologies and trends?",
+        text: "That's great to hear. Lastly, how do you stay updated with new technologies and trends?",
       },
       {
         isUser: true,
@@ -56,28 +56,28 @@ const scenarios = [
         text: "Did you see Timothée Chalamet at the Oscars? His zoot suit was... something else",
       },
       {
-        isUser: false,
-        text: "Yeah, I couldn’t believe it. It was so unexpected but somehow work!",
+        isUser: true,
+        text: "Yeah, I couldn't believe it. It was so unexpected but somehow work!",
         correction: "\"Work\" should be \"worked\" to match the past tense of the sentence.",
       },
       {
-        isUser: true,
+        isUser: false,
         text: "It definitely had a vintage vibe to it. I saw a ton of memes right after",
       },
       {
-        isUser: false,
+        isUser: true,
         text: "I saw one where they compared him to The Matrix. It was hilarious, but honestly, I respect him for taking that risk",
       },
       {
-        isUser: true,
+        isUser: false,
         text: "Same here. Some people weren’t fans, but I think it’s cool to stand out like that",
       },
       {
-        isUser: false,
+        isUser: true,
         text: "Exactly! He owns it. You either love it or you don’t, but you can’t ignore it",
       },
       {
-        isUser: true,
+        isUser: false,
         text: "For sure, he’s got the confidence to pull off a look like that. Not everyone could.",
       },
     ],
@@ -182,10 +182,10 @@ export default function Home() {
                 Overcome the language barrier with an AI assistant that adapts to your learning needs
               </p>
 
-              <div className="flex gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-black text-white hover:bg-black/90 text-lg px-8 py-6 rounded-full"
+                  className="bg-black text-white hover:bg-black/90 text-lg px-8 py-6 rounded-full w-full sm:w-auto"
                   asChild
                 >
                   <Link href="#waitlist">
@@ -194,7 +194,7 @@ export default function Home() {
                 </Button>
                 <Button
                   size="lg"
-                  className="bg-white border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6 rounded-full"
+                  className="bg-white border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6 rounded-full w-full sm:w-auto"
                   asChild
                 >
                   <Link href="https://dariadiachuk.youcanbook.me/">
@@ -219,7 +219,7 @@ export default function Home() {
                           <ConversationBubble
                             isUser={true}
                             correction={`"Work" should be "worked" to match the past tense of the sentence.`}>
-                            Yeah, I couldn’t believe it. It was so unexpected but somehow work!
+                            Yeah, I couldn't believe it. It was so unexpected but somehow work!
                           </ConversationBubble>
                           <ConversationBubble isUser={false}>
                             It definitely had a vintage vibe to it. I saw a ton of memes right after.
@@ -228,13 +228,13 @@ export default function Home() {
                           I saw one where they compared him to The Matrix. It was hilarious, but honestly, I respect him for taking that risk.
                           </ConversationBubble>
                           <ConversationBubble isUser={false}>
-                            Same here. Some people weren’t fans, but I think it’s cool to stand out like that.
+                            Same here. Some people weren't fans, but I think it's cool to stand out like that.
                           </ConversationBubble>
                           <ConversationBubble isUser={true}>
-                            Exactly! He owns it. You either love it or you don’t, but you can’t ignore it.
+                            Exactly! He owns it. You either love it or you don't, but you can't ignore it.
                           </ConversationBubble>
                           <ConversationBubble isUser={false}>
-                            For sure, he’s got the confidence to pull off a look like that. Not everyone could.
+                            For sure, he's got the confidence to pull off a look like that. Not everyone could.
                           </ConversationBubble>
                         </div>
                       </div>
@@ -370,7 +370,7 @@ export default function Home() {
                         <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold mb-2 flex items-center">
                             <span className="text-neon mr-2">
-                              <Image src={Star1} width={30} height={30} alt="" />
+                              <Image src={Star4} width={20} height={20} alt="" />
                             </span>
                             Real-time Corrections
                           </h4>
@@ -383,7 +383,7 @@ export default function Home() {
                         <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold mb-2 flex items-center">
                             <span className="text-neon mr-2">
-                              <Image src={Star1} width={30} height={30} alt="" />
+                              <Image src={Star4} width={20} height={20} alt="" />
                             </span>
                             Discuss anything
                           </h4>
@@ -396,7 +396,7 @@ export default function Home() {
                         <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
                           <h4 className="text-lg font-bold mb-2 flex items-center">
                             <span className="text-neon mr-2">
-                              <Image src={Star1} width={30} height={30} alt="" />
+                              <Image src={Star4} width={20} height={20} alt="" />
                             </span>
                             Practice Anytime
                           </h4>
