@@ -14,6 +14,7 @@ import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Star4 from '@/public/star-4.png';
 import { Toaster } from '@/components/ui/toaster';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const scenarios = [
   {
@@ -70,15 +71,15 @@ const scenarios = [
       },
       {
         isUser: false,
-        text: "Same here. Some people weren’t fans, but I think it’s cool to stand out like that",
+        text: "Same here. Some people weren't fans, but I think it's cool to stand out like that",
       },
       {
         isUser: true,
-        text: "Exactly! He owns it. You either love it or you don’t, but you can’t ignore it",
+        text: "Exactly! He owns it. You either love it or you don't, but you can't ignore it",
       },
       {
         isUser: false,
-        text: "For sure, he’s got the confidence to pull off a look like that. Not everyone could.",
+        text: "For sure, he's got the confidence to pull off a look like that. Not everyone could.",
       },
     ],
   },
@@ -113,6 +114,7 @@ const scenarios = [
 
 export default function Home() {
   const [activeScenarioIndex, setActiveScenarioIndex] = useState(0);
+  const isMobile = useIsMobile()
   const intervalRef = useRef<any>(null);
 
   useEffect(() => {
@@ -316,7 +318,8 @@ export default function Home() {
 
                   <div className="grid md:grid-cols-12 gap-8 items-center">
                     {/* Left side - Phone */}
-                    <div className="md:col-span-5 relative">
+                    {!isMobile && (
+                      <div className="md:col-span-5 relative">
                       <div className="absolute -inset-4 bg-neon/10 blur-xl rounded-full"></div>
                       <div className="relative z-10 flex justify-center">
                         <ThreeDCard>
@@ -341,6 +344,7 @@ export default function Home() {
                         </ThreeDCard>
                       </div>
                     </div>
+                    )}
 
                     {/* Right side - Features */}
                     <div className="md:col-span-7">
@@ -362,6 +366,30 @@ export default function Home() {
                           </button>
                         ))}
                       </div>
+                      {isMobile && (
+                        <div className="md:col-span-5 relative pt-3 pb-10">
+                          <div className="absolute -inset-4 bg-neon/10 blur-xl rounded-full"></div>
+                          <div className="relative z-10 flex justify-center">
+                            <ThreeDCard>
+                              <MobileDevice>
+                                <div className="bg-white h-full w-full p-4 flex flex-col">
+                                  <div className="flex-1 overflow-y-auto space-y-4">
+                                    {scenarios[activeScenarioIndex].conversation.map((message, index) => (
+                                      <ConversationBubble
+                                        key={index}
+                                        isUser={message.isUser}
+                                        correction={message.correction}
+                                      >
+                                        {message.text}
+                                      </ConversationBubble>
+                                    ))}
+                                  </div>
+                                </div>
+                              </MobileDevice>
+                            </ThreeDCard>
+                          </div>
+                        </div>
+                      )}
 
                       <div className="space-y-6">
                         <div className="p-4 bg-gray-50 rounded-lg border border-gray-100 hover:shadow-md transition-shadow">
