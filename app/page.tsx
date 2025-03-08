@@ -137,14 +137,11 @@ export default function Home() {
           </div>
         </div>
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="#problem" className="text-medium hover:text-neon transition-colors">
-            Problem
-          </Link>
           <Link href="#solution" className="text-medium hover:text-neon transition-colors">
-            Solution
-          </Link>
-          <Link href="#how" className="text-medium hover:text-neon transition-colors">
             How It Works
+          </Link>
+          <Link href="#whyExplore" className="text-medium hover:text-neon transition-colors">
+            Why Explore
           </Link>
           <Link href="#waitlist" className="text-medium hover:text-neon transition-colors">
             Join Waitlist
@@ -348,9 +345,9 @@ export default function Home() {
                     {/* Right side - Features */}
                     <div className="md:col-span-7">
                       <h3 className="text-2xl font-bold mb-6 text-center">
-                        <span className="text-neon">Choose a scenario</span> to practice
+                        Choose a scenario to practice
                       </h3>
-                      <div className="flex flex-wrap gap-4 mb-6 justify-center md:justify-start">
+                      <div className="flex flex-wrap gap-4 mb-6 justify-center">
                         {scenarios.map((scenario, index) => (
                           <button
                             key={scenario.id}
@@ -479,7 +476,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 relative slant-bg">
+        <section id="whyExplore" className="py-24 relative slant-bg">
           <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent"></div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto">
