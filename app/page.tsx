@@ -172,13 +172,13 @@ export default function Home() {
               </div>
 
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-center max-w-4xl">
-                Practice English with
+                Master English with
                 <br />
                 <span className="text-neon">AI conversations</span>
               </h1>
 
               <p className="text-xl text-medium mb-8 max-w-2xl text-center">
-                Overcome the language barrier with an AI assistant that adapts to your learning needs
+                Overcome the language barrier with an AI tutor that understands you
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -254,10 +254,10 @@ export default function Home() {
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col md:flex-row gap-16">
                 <div className="flex-1">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center md:text-left">
                     Traditional language apps <span className="text-neon">suck</span>
                   </h2>
-                  <p className="text-xl text-medium mb-8">
+                  <p className="text-xl text-medium mb-8 text-center md:text-left">
                     They focus on vocabulary and grammar, but <span className="text-neon">fail miserably</span> at
                     preparing you for real conversations.
                   </p>
@@ -308,7 +308,7 @@ export default function Home() {
                   <span className="text-neon">Explore</span> is your safe space for English practice
                 </h2>
                 <p className="text-xl text-medium max-w-2xl mx-auto">
-                  Discuss any topic you <span className="text-neon">passionate</span> about and get instant feedback
+                  Discuss any topic you are <span className="text-neon">passionate</span> about and get instant feedback
                   to improve your fluency.
                 </p>
               </div>
