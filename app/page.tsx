@@ -13,13 +13,34 @@ import { DecorativeElements } from "@/components/decorative-elements"
 import React, { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Star4 from '@/public/star-4.png';
+import Mic from '@/public/mic.svg';
 import { Toaster } from '@/components/ui/toaster';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+const useTypewriter = (text: string, speed: number = 50) => {
+  const [displayText, setDisplayText] = useState('');
+  
+  useEffect(() => {
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        setDisplayText(prev => prev + text.charAt(i));
+        i++;
+      } else {
+        clearInterval(timer);
+      }
+    }, speed);
+    
+    return () => clearInterval(timer);
+  }, [text, speed]);
+  
+  return displayText;
+};
+
 const scenarios = [
   {
-    id: "HR",
-    title: "HR interview",
+    id: "interview",
+    title: "Interview at Apple",
     conversation: [
       {
         isUser: false,
@@ -85,28 +106,39 @@ const scenarios = [
   },
   {
     id: "shopping",
-    title: "Shopping Experience",
+    title: "Ferrari shopping",
     conversation: [
       {
         isUser: false,
-        text: "Hi there! Can I help you find anything specific today?",
+        text: "Hey there! Welcome to Ferrari. Looking for something special today?",
       },
       {
         isUser: true,
-        text: "I'm looking for winter jacket. Do you have any on sale?",
-        correction: "You need the article 'a' before 'winter jacket'"
+        text: "Yeah, I want something fast and, you know, turns heads",
       },
       {
         isUser: false,
-        text: "Yes, we have several winter jackets on sale in the back section.",
+        text: "You're in the right place! How about the SF90 Stradale? Nearly 1,000 horsepower, 0-60 in 2.5 seconds. Absolute beast",
       },
       {
         isUser: true,
-        text: "Great! I prefer something waterproof and warm but not too expensive.",
+        text: "That sounds insane. Got it in red?",
       },
       {
         isUser: false,
-        text: "I can show you our North Face collection. They're high quality and currently 30% off. Would you like to see them?",
+        text: "Of course—Rosso Corsa. The classic Ferrari look",
+      },
+      {
+        isUser: true,
+        text: "This feels unreal. What's the damage?",
+      },
+      {
+        isUser: false,
+        text: "Around $550K, depending on extras. But hey, it's not just a car — it's a statement",
+      },
+      {
+        isUser: true,
+        text: "I love it. Let's talk numbers and make this happen",
       },
     ],
   },
@@ -116,11 +148,12 @@ export default function Home() {
   const [activeScenarioIndex, setActiveScenarioIndex] = useState(0);
   const isMobile = useIsMobile()
   const intervalRef = useRef<any>(null);
+  const typedText = useTypewriter("Did you see Timothée Chalamet at the Oscars? It was... something else", 20);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setActiveScenarioIndex((current) => (current + 1) % scenarios.length)
-    }, 8000)
+    }, 16000)
 
     return () => clearInterval(intervalRef.current)
   }, [])
@@ -208,33 +241,25 @@ export default function Home() {
                 <div className="absolute -inset-10 bg-neon/20 blur-[100px] rounded-full"></div>
                 <div className="relative z-10 flex justify-center">
                   <ThreeDCard className="w-full max-w-md">
-                    <MobileDevice showAIVisual={true}>
+                    <MobileDevice showAIVisual={false}>
                       <div className="bg-white h-full w-full p-4 flex flex-col">
-                        {/*<div className="text-sm text-medium mb-2">Scenario: Restaurant Ordering</div>*/}
                         <div className="flex-1 overflow-y-auto space-y-4">
-                          <ConversationBubble isUser={false}>
-                            Did you see Timothée Chalamet at the Oscars? His zoot suit was... something else
-                          </ConversationBubble>
-                          <ConversationBubble
-                            isUser={true}
-                            correction={`"Work" should be "worked" to match the past tense of the sentence.`}>
-                            Yeah, I couldn't believe it. It was so unexpected but somehow work!
-                          </ConversationBubble>
-                          <ConversationBubble isUser={false}>
-                            It definitely had a vintage vibe to it. I saw a ton of memes right after.
-                          </ConversationBubble>
-                          <ConversationBubble isUser={true}>
-                          I saw one where they compared him to The Matrix. It was hilarious, but honestly, I respect him for taking that risk.
-                          </ConversationBubble>
-                          <ConversationBubble isUser={false}>
-                            Same here. Some people weren't fans, but I think it's cool to stand out like that.
-                          </ConversationBubble>
-                          <ConversationBubble isUser={true}>
-                            Exactly! He owns it. You either love it or you don't, but you can't ignore it.
-                          </ConversationBubble>
-                          <ConversationBubble isUser={false}>
-                            For sure, he's got the confidence to pull off a look like that. Not everyone could.
-                          </ConversationBubble>
+                          <div className="mt-16 px-8 text-sm mb-2 text-center">{typedText}</div>
+                          <div
+                            className="top-44 opacity-90 recording-box absolute h-56 w-56 left-6 rounded-[50%] p-[12%] pt-[17%] record-animation"
+                          >
+                            <div
+                              className="h-full w-full rounded-[50%]"
+                              style={{ background: 'linear-gradient(rgba(255, 44, 205, 0.54), #B1CED5)' }}
+                            />
+                          </div>
+                        </div>
+                        <div className="w-full flex justify-center mb-5">
+                          <div className="border-2 rounded-full w-[44px] flex justify-center cursor-pointer hover:bg-neon hover:border-neon">
+                            <Link href="#waitlist">
+                              <Image src={Mic} alt="mic" />
+                            </Link>
+                          </div>
                         </div>
                       </div>
                     </MobileDevice>
@@ -325,10 +350,7 @@ export default function Home() {
                         <ThreeDCard>
                           <MobileDevice>
                             <div className="bg-white h-full w-full p-4 flex flex-col">
-                              {/*<div className="text-sm text-medium mb-2">*/}
-                              {/*  Scenario: {scenarios[activeScenarioIndex].title}*/}
-                              {/*</div>*/}
-                              <div className="flex-1 overflow-y-auto space-y-4">
+                              <div className="flex-1 overflow-y-auto space-y-4 pt-10">
                                 {scenarios[activeScenarioIndex].conversation.map((message, index) => (
                                   <ConversationBubble
                                     key={index}

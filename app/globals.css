@@ -334,3 +334,28 @@ html {
   box-shadow: 0 8px 30px rgba(255, 44, 205, 0.15);
 }
 
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.recording-box {
+  background: linear-gradient(
+    143deg,
+    #de83e6 8.37%,
+    #E4DFD6 71.62%
+  );
+  filter: blur(13.100000381469727px);
+}
+
+
+.record-animation {
+  animation: rotate360 infinite 5s linear;
+  will-change: transform;
+}
+
