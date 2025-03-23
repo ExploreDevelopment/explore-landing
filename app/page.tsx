@@ -178,16 +178,20 @@ export default function Home() {
           <Link href="#whyExplore" className="text-medium hover:text-neon transition-colors">
             Why Explore
           </Link>
+          {/* TODO: replace with pricing */}
           <Link href="#waitlist" className="text-medium hover:text-neon transition-colors">
-            Join Waitlist
+            Go to app
           </Link>
+          {/*<Link href="#waitlist" className="text-medium hover:text-neon transition-colors">*/}
+          {/*  Pricing*/}
+          {/*</Link>*/}
         </nav>
         <Button
           variant="outline"
           className="border-neon text-neon hover:bg-neon hover:text-white transition-all cyber-button"
           asChild
         >
-          <Link href="#waitlist">Join Waitlist</Link>
+          <Link href="https://app.explorelabs.tech">Go to app</Link>
         </Button>
       </header>
 
@@ -196,15 +200,15 @@ export default function Home() {
         <section className="relative pt-20 pb-32 overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center justify-center">
-              <div className="inline-flex items-center bg-gray-200 rounded-full px-3 py-1 mb-8">
-                <span className="w-4 h-4 bg-neon rounded-full mr-2"></span>
-                <span className="text-sm font-medium">We're launching soon</span>
-                <Link href="#waitlist" className="text-sm text-neon ml-2 font-medium">
-                  Join waitlist →
-                </Link>
-              </div>
+              {/*<div className="inline-flex items-center bg-gray-200 rounded-full px-3 py-1 mb-8">*/}
+              {/*  <span className="w-4 h-4 bg-neon rounded-full mr-2"></span>*/}
+              {/*  <span className="text-sm font-medium">We're launching soon</span>*/}
+              {/*  <Link href="#waitlist" className="text-sm text-neon ml-2 font-medium">*/}
+              {/*    Join waitlist →*/}
+              {/*  </Link>*/}
+              {/*</div>*/}
 
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-center max-w-4xl">
+              <h1 className="text-5xl md:text-7xl py-9 font-bold tracking-tight mb-6 text-center max-w-4xl">
                 Master English with
                 <br />
                 <span className="text-neon">AI conversations</span>
@@ -220,7 +224,7 @@ export default function Home() {
                   className="bg-black text-white hover:bg-black/90 text-lg px-8 py-6 rounded-full w-full sm:w-auto"
                   asChild
                 >
-                  <Link href="#waitlist">
+                  <Link href="https://app.explorelabs.tech">
                     <span className="text-xl">Start learning</span>
                   </Link>
                 </Button>
@@ -599,12 +603,142 @@ export default function Home() {
               </p>
               <ThreeDCard>
                 <div className="light-card p-8 rounded-2xl backdrop-blur-md">
-                  <WaitlistForm />
+                  <Link href="https://app.explorelabs.tech">
+                    <Button
+                      asChild
+                      type="submit"
+                      className="w-3/4 bg-neon text-white hover:bg-neon/90 h-14 text-lg font-medium cyber-button"
+                    >
+                      <span className="text-xl">Go to app</span>
+                    </Button>
+                    </Link>
                 </div>
               </ThreeDCard>
             </div>
           </div>
         </section>
+
+        {/*<section id="waitlist" className="py-24 relative">*/}
+        {/*  <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent"></div>*/}
+        {/*  <div className="absolute inset-0 bg-neon/5"></div>*/}
+        {/*  <div className="container mx-auto px-4 relative z-10">*/}
+        {/*    <div className="max-w-4xl mx-auto text-center">*/}
+        {/*      <h2 className="text-4xl md:text-6xl font-bold mb-6">*/}
+        {/*        Choose Your <span className="text-neon">Plan</span>*/}
+        {/*      </h2>*/}
+        {/*      <p className="text-xl text-medium mb-12 max-w-2xl mx-auto">*/}
+        {/*        Upgrade your English practice experience with our premium features*/}
+        {/*      </p>*/}
+
+        {/*      <div className="grid md:grid-cols-3 gap-8">*/}
+        {/*        /!* Basic Plan *!/*/}
+        {/*        <ThreeDCard>*/}
+        {/*          <div className="light-card rounded-2xl p-8 h-full flex flex-col">*/}
+        {/*            <div className="mb-8">*/}
+        {/*              <div className="w-12 h-12 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">*/}
+        {/*                <span className="text-neon text-xl">$</span>*/}
+        {/*              </div>*/}
+        {/*              <h3 className="text-2xl font-bold mb-2">Basic</h3>*/}
+        {/*              <p className="text-medium">Perfect for beginners</p>*/}
+        {/*            </div>*/}
+        {/*            <div className="text-4xl font-bold mb-6">*/}
+        {/*              $9.99<span className="text-medium text-lg">/month</span>*/}
+        {/*            </div>*/}
+        {/*            <ul className="space-y-4 mb-8 flex-grow">*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> 10 conversation topics*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Basic vocabulary practice*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Weekly progress report*/}
+        {/*              </li>*/}
+        {/*            </ul>*/}
+        {/*            <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>*/}
+        {/*              <Link href="https://app.explorelabs.tech">Subscribe Now</Link>*/}
+        {/*            </Button>*/}
+        {/*          </div>*/}
+        {/*        </ThreeDCard>*/}
+
+        {/*        /!* Premium Plan *!/*/}
+        {/*        <ThreeDCard>*/}
+        {/*          <div className="light-card rounded-2xl p-8 h-full flex flex-col relative">*/}
+        {/*            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon text-white px-4 py-1 rounded-full text-sm">*/}
+        {/*              Popular*/}
+        {/*            </div>*/}
+        {/*            <div className="mb-8">*/}
+        {/*              <div className="w-12 h-12 bg-neon/10 rounded-full mx-auto mb-4 flex items-center justify-center">*/}
+        {/*                <span className="text-neon text-xl">★</span>*/}
+        {/*              </div>*/}
+        {/*              <h3 className="text-2xl font-bold mb-2">Premium</h3>*/}
+        {/*              <p className="text-medium">Most popular choice</p>*/}
+        {/*            </div>*/}
+        {/*            <div className="text-4xl font-bold mb-6">*/}
+        {/*              $19.99<span className="text-medium text-lg">/month</span>*/}
+        {/*            </div>*/}
+        {/*            <ul className="space-y-4 mb-8 flex-grow">*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Unlimited conversation topics*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Advanced vocabulary practice*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Daily progress report*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Personalized feedback*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Priority support*/}
+        {/*              </li>*/}
+        {/*            </ul>*/}
+        {/*            <Button className="w-full bg-neon hover:bg-neon/90" size="lg" asChild>*/}
+        {/*              <Link href="https://app.explorelabs.tech">Subscribe Now</Link>*/}
+        {/*            </Button>*/}
+        {/*          </div>*/}
+        {/*        </ThreeDCard>*/}
+
+        {/*        /!* Annual Plan *!/*/}
+        {/*        <ThreeDCard>*/}
+        {/*          <div className="light-card rounded-2xl p-8 h-full flex flex-col">*/}
+        {/*            <div className="mb-8">*/}
+        {/*              <div className="w-12 h-12 bg-neon/10 rounded-full mx-auto mb-4 flex items-center justify-center">*/}
+        {/*                <span className="text-neon text-xl">★</span>*/}
+        {/*              </div>*/}
+        {/*              <h3 className="text-2xl font-bold mb-2">Annual</h3>*/}
+        {/*              <p className="text-medium">Best value</p>*/}
+        {/*            </div>*/}
+        {/*            <div className="text-4xl font-bold mb-6">*/}
+        {/*              $199.99<span className="text-medium text-lg">/year</span>*/}
+        {/*            </div>*/}
+        {/*            <ul className="space-y-4 mb-8 flex-grow">*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> All Premium features*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Save 17% compared to monthly*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Offline mode access*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Custom conversation topics*/}
+        {/*              </li>*/}
+        {/*              <li className="flex items-center gap-2 text-medium">*/}
+        {/*                <span className="text-neon">✓</span> Group practice sessions*/}
+        {/*              </li>*/}
+        {/*            </ul>*/}
+        {/*            <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>*/}
+        {/*              <Link href="https://app.explorelabs.tech">Subscribe Now</Link>*/}
+        {/*            </Button>*/}
+        {/*          </div>*/}
+        {/*        </ThreeDCard>*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*  </div>*/}
+        {/*</section>*/}
       </main>
 
       <footer className="py-12 relative z-10">
