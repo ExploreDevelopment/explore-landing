@@ -618,127 +618,112 @@ export default function Home() {
           </div>
         </section>
 
-        {/*<section id="waitlist" className="py-24 relative">*/}
-        {/*  <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent"></div>*/}
-        {/*  <div className="absolute inset-0 bg-neon/5"></div>*/}
-        {/*  <div className="container mx-auto px-4 relative z-10">*/}
-        {/*    <div className="max-w-4xl mx-auto text-center">*/}
-        {/*      <h2 className="text-4xl md:text-6xl font-bold mb-6">*/}
-        {/*        Choose Your <span className="text-neon">Plan</span>*/}
-        {/*      </h2>*/}
-        {/*      <p className="text-xl text-medium mb-12 max-w-2xl mx-auto">*/}
-        {/*        Upgrade your English practice experience with our premium features*/}
-        {/*      </p>*/}
+        <section id="waitlist" className="py-24 relative">
+          <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-neon/5"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                Choose your plan
+              </h2>
+              <p className="text-xl text-medium mb-12 max-w-2xl mx-auto">
+                Upgrade your English practice experience with our premium features
+              </p>
 
-        {/*      <div className="grid md:grid-cols-3 gap-8">*/}
-        {/*        /!* Basic Plan *!/*/}
-        {/*        <ThreeDCard>*/}
-        {/*          <div className="light-card rounded-2xl p-8 h-full flex flex-col">*/}
-        {/*            <div className="mb-8">*/}
-        {/*              <div className="w-12 h-12 bg-gray-100 rounded-full mx-auto mb-4 flex items-center justify-center">*/}
-        {/*                <span className="text-neon text-xl">$</span>*/}
-        {/*              </div>*/}
-        {/*              <h3 className="text-2xl font-bold mb-2">Basic</h3>*/}
-        {/*              <p className="text-medium">Perfect for beginners</p>*/}
-        {/*            </div>*/}
-        {/*            <div className="text-4xl font-bold mb-6">*/}
-        {/*              $9.99<span className="text-medium text-lg">/month</span>*/}
-        {/*            </div>*/}
-        {/*            <ul className="space-y-4 mb-8 flex-grow">*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> 10 conversation topics*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Basic vocabulary practice*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Weekly progress report*/}
-        {/*              </li>*/}
-        {/*            </ul>*/}
-        {/*            <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>*/}
-        {/*              <Link href="https://app.explorelabs.tech">Subscribe Now</Link>*/}
-        {/*            </Button>*/}
-        {/*          </div>*/}
-        {/*        </ThreeDCard>*/}
+              <div className="grid md:grid-cols-3 gap-8">
+                {/* Basic Plan */}
+                <ThreeDCard>
+                  <div className="light-card rounded-2xl p-8 h-full flex flex-col">
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-bold mb-2">Basic</h3>
+                      <p className="text-medium">Perfect for beginners</p>
+                    </div>
+                    <div className="text-4xl font-bold mb-6">
+                      $19.99<span className="text-medium text-lg">/month</span>
+                    </div>
+                    <ul className="space-y-4 mb-8 flex-grow">
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Up 30 personalized AI companions
+                      </li>
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Limited daily speaking practice
+                      </li>
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Personalized feedback and corrections
+                      </li>
+                    </ul>
+                    <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>
+                      <Link href="https://app.explorelabs.tech">Subscribe Now</Link>
+                    </Button>
+                  </div>
+                </ThreeDCard>
 
-        {/*        /!* Premium Plan *!/*/}
-        {/*        <ThreeDCard>*/}
-        {/*          <div className="light-card rounded-2xl p-8 h-full flex flex-col relative">*/}
-        {/*            <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon text-white px-4 py-1 rounded-full text-sm">*/}
-        {/*              Popular*/}
-        {/*            </div>*/}
-        {/*            <div className="mb-8">*/}
-        {/*              <div className="w-12 h-12 bg-neon/10 rounded-full mx-auto mb-4 flex items-center justify-center">*/}
-        {/*                <span className="text-neon text-xl">★</span>*/}
-        {/*              </div>*/}
-        {/*              <h3 className="text-2xl font-bold mb-2">Premium</h3>*/}
-        {/*              <p className="text-medium">Most popular choice</p>*/}
-        {/*            </div>*/}
-        {/*            <div className="text-4xl font-bold mb-6">*/}
-        {/*              $19.99<span className="text-medium text-lg">/month</span>*/}
-        {/*            </div>*/}
-        {/*            <ul className="space-y-4 mb-8 flex-grow">*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Unlimited conversation topics*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Advanced vocabulary practice*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Daily progress report*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Personalized feedback*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Priority support*/}
-        {/*              </li>*/}
-        {/*            </ul>*/}
-        {/*            <Button className="w-full bg-neon hover:bg-neon/90" size="lg" asChild>*/}
-        {/*              <Link href="https://app.explorelabs.tech">Subscribe Now</Link>*/}
-        {/*            </Button>*/}
-        {/*          </div>*/}
-        {/*        </ThreeDCard>*/}
+                {/* Premium Plan */}
+                <ThreeDCard>
+                  <div className="light-card rounded-2xl p-8 h-full flex flex-col relative">
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-neon text-white px-4 py-1 rounded-full text-sm">
+                      Popular
+                    </div>
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-bold mb-2">Premium</h3>
+                      <p className="text-medium">Most popular choice</p>
+                    </div>
+                    <div className="text-4xl font-bold mb-6">
+                      $34.99<span className="text-medium text-lg">/month</span>
+                    </div>
+                    <ul className="space-y-4 mb-8 flex-grow">
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Unlimited number of AI companions
+                      </li>
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Unlimited daily speaking practice
+                      </li>
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Realtime calls practice
+                      </li>
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Personalized feedback and corrections
+                      </li>
+                    </ul>
+                    <Button className="w-full bg-neon hover:bg-neon/90" size="lg" asChild>
+                      <Link href="https://app.explorelabs.tech">Subscribe Now</Link>
+                    </Button>
+                  </div>
+                </ThreeDCard>
 
-        {/*        /!* Annual Plan *!/*/}
-        {/*        <ThreeDCard>*/}
-        {/*          <div className="light-card rounded-2xl p-8 h-full flex flex-col">*/}
-        {/*            <div className="mb-8">*/}
-        {/*              <div className="w-12 h-12 bg-neon/10 rounded-full mx-auto mb-4 flex items-center justify-center">*/}
-        {/*                <span className="text-neon text-xl">★</span>*/}
-        {/*              </div>*/}
-        {/*              <h3 className="text-2xl font-bold mb-2">Annual</h3>*/}
-        {/*              <p className="text-medium">Best value</p>*/}
-        {/*            </div>*/}
-        {/*            <div className="text-4xl font-bold mb-6">*/}
-        {/*              $199.99<span className="text-medium text-lg">/year</span>*/}
-        {/*            </div>*/}
-        {/*            <ul className="space-y-4 mb-8 flex-grow">*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> All Premium features*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Save 17% compared to monthly*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Offline mode access*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Custom conversation topics*/}
-        {/*              </li>*/}
-        {/*              <li className="flex items-center gap-2 text-medium">*/}
-        {/*                <span className="text-neon">✓</span> Group practice sessions*/}
-        {/*              </li>*/}
-        {/*            </ul>*/}
-        {/*            <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>*/}
-        {/*              <Link href="https://app.explorelabs.tech">Subscribe Now</Link>*/}
-        {/*            </Button>*/}
-        {/*          </div>*/}
-        {/*        </ThreeDCard>*/}
-        {/*      </div>*/}
-        {/*    </div>*/}
-        {/*  </div>*/}
-        {/*</section>*/}
+                {/* Annual Plan */}
+                <ThreeDCard>
+                  <div className="light-card rounded-2xl p-8 h-full flex flex-col">
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-bold mb-2">Annual</h3>
+                      <p className="text-medium">Best value</p>
+                    </div>
+                    <div className="text-4xl font-bold mb-6">
+                      $149.99<span className="text-medium text-lg">/year</span>
+                    </div>
+                    <ul className="space-y-4 mb-8 flex-grow">
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Unlimited number of AI companions
+                      </li>
+                      <li className="flex i tems-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Unlimited daily speaking practice
+                      </li>
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Realtime calls practice
+                      </li>
+                      <li className="flex items-center gap-2 text-medium">
+                        <span className="text-neon">✓</span> Personalized feedback and corrections
+                      </li>
+                    </ul>
+                    <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>
+                      <Link href="https://app.explorelabs.tech">Subscribe Now</Link>
+                    </Button>
+                  </div>
+                </ThreeDCard>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer className="py-12 relative z-10">
@@ -747,7 +732,17 @@ export default function Home() {
             <div className="text-2xl font-bold tracking-tighter mb-4 md:mb-0">
               <span className="text-neon">explore</span>
             </div>
-            <div className="text-sm text-medium">© {new Date().getFullYear()} Explore. All rights reserved.</div>
+            <div className="flex gap-6">
+              <div className="text-sm text-medium">© {new Date().getFullYear()} Explore. All rights reserved.</div>
+              <div className="flex gap-6">
+              <Link href="/privacy-policy" className="text-sm text-medium hover:text-neon transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms-conditions" className="text-sm text-medium hover:text-neon transition-colors">
+                Terms & Conditions
+              </Link>
+            </div>
+            </div>
           </div>
         </div>
       </footer>
