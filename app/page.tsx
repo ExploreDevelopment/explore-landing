@@ -117,7 +117,7 @@ const scenarios = [
   },
   {
     id: "feedback",
-    title: "Giving critical feedback to your colleague in an email",
+    title: "Giving critical feedback to a colleague",
     conversation: [
       {
         isUser: true,
@@ -155,7 +155,7 @@ export default function Home() {
   const [activeScenarioIndex, setActiveScenarioIndex] = useState(0);
   const isMobile = useIsMobile()
   const intervalRef = useRef<any>(null);
-  const typedText = useTypewriter("AI VC: So, I’ve looked through the pitch deck you sent me… honestly, why would anyone fund this? I’ve seen 10 tools like yours this week.", 20);
+  const typedText = useTypewriter("So, I’ve looked through the pitch deck you sent me… honestly, why would anyone fund this? I’ve seen 10 tools like yours this week.", 20);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -248,7 +248,7 @@ export default function Home() {
                         <div className="flex-1 overflow-y-auto space-y-4">
                           <div className="mt-16 px-8 text-sm mb-2 text-center">{typedText}</div>
                           <div
-                            className="top-46 opacity-90 recording-box absolute h-56 w-56 left-6 rounded-[50%] p-[12%] pt-[17%] record-animation"
+                            className="bottom-28 opacity-90 recording-box absolute h-56 w-56 left-6 rounded-[50%] p-[12%] pt-[17%] record-animation"
                           >
                             <div
                               className="h-full w-full rounded-[50%]"
