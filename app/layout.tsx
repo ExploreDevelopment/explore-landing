@@ -13,10 +13,9 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "Explore - Your Personal AI English Tutor",
+  title: "Your AI Copilot for Professional Communication in any language",
   description:
-    "Practice real-life English conversations in any scenario with instant feedback to improve your fluency.",
-    generator: 'v0.dev'
+    "Built for advanced language learners who need to lead, pitch, and persuade under pressure — in a second language."
 }
 
 export default function RootLayout({

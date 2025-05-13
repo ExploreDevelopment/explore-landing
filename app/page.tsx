@@ -70,75 +70,82 @@ const scenarios = [
     ],
   },
   {
-    id: "chalamet",
-    title: "Timothée Chalamet",
+    id: "pitching",
+    title: "Pitching to an early stage VC fund",
     conversation: [
       {
         isUser: false,
-        text: "Did you see Timothée Chalamet at the Oscars? His zoot suit was... something else",
+        text: "Alright, let’s get to it. What exactly are you building, and why should I care?",
       },
       {
         isUser: true,
-        text: "Yeah, I couldn't believe it. It was so unexpected but somehow work!",
-        correction: "\"Work\" should be \"worked\" to match the past tense of the sentence.",
+        text: "We’re building an AI language coach for professionals who use English at work. It helps them speak and write more clearly in high-stakes situations.!",
       },
       {
         isUser: false,
-        text: "It definitely had a vintage vibe to it. I saw a ton of memes right after",
+        text: "Isn’t that what Grammarly does?",
       },
       {
         isUser: true,
-        text: "I saw one where they compared him to The Matrix. It was hilarious, but honestly, I respect him for taking that risk",
+        text: "Grammarly checks grammar. We help users perform — like in live meetings, pitches, or sales calls. Explore gives context-aware feedback and trains people to communicate confidently.",
       },
       {
         isUser: false,
-        text: "Same here. Some people weren't fans, but I think it's cool to stand out like that",
+        text: "Okay. Who’s actually using this?",
       },
       {
         isUser: true,
-        text: "Exactly! He owns it. You either love it or you don't, but you can't ignore it",
+        text: "We launched three months ago. Right now, we’ve got 500 weekly active users — mostly consultants, founders, and business teams in Europe and Asia.",
       },
       {
         isUser: false,
-        text: "For sure, he's got the confidence to pull off a look like that. Not everyone could.",
+        text: "500 isn’t much. What's the traction story here?",
+      },
+      {
+        isUser: true,
+        text: "It’s early, but the engagement is strong — over 30% of users come back daily. We’re building for a global market that feels this pain every day, and we’re moving fast.",
+      },
+      {
+        isUser: false,
+        text: "Alright. What's your unfair advantage?",
+      },
+      {
+        isUser: true,
+        text: "We’re language-first founders who lived this pain. Plus, our tech goes beyond templates — it learns how you speak, and helps you improve fast. That’s hard to copy.",
       },
     ],
   },
   {
-    id: "shopping",
-    title: "Ferrari shopping",
+    id: "feedback",
+    title: "Giving critical feedback to your colleague in an email",
     conversation: [
       {
-        isUser: false,
-        text: "Hey there! Welcome to Ferrari. Looking for something special today?",
-      },
-      {
         isUser: true,
-        text: "Yeah, I want something fast and, you know, turns heads",
+        text: "Hey Alex, do you have a minute to talk about the meeting?",
       },
       {
         isUser: false,
-        text: "You're in the right place! How about the SF90 Stradale? Nearly 1,000 horsepower, 0-60 in 2.5 seconds. Absolute beast",
+        text: "Sure, what’s up?",
       },
       {
         isUser: true,
-        text: "That sounds insane. Got it in red?",
+        text: "Great job with the demo—your points were strong and clear. One quick thing I noticed: during Q&A, there were a couple of times you spoke over the client.",
       },
       {
         isUser: false,
-        text: "Of course—Rosso Corsa. The classic Ferrari look",
+        text: "Oh, really? I didn’t mean to.",
       },
       {
         isUser: true,
-        text: "This feels unreal. What's the damage?",
+        text: "Totally get it—it happens. I think if we pause a bit more and let them finish, it can help build trust and make them feel heard.",
       },
       {
         isUser: false,
-        text: "Around $550K, depending on extras. But hey, it's not just a car — it's a statement",
+        text: "Yeah, that makes sense. Thanks for telling me.",
       },
       {
         isUser: true,
-        text: "I love it. Let's talk numbers and make this happen",
+        text: "Of course. Your energy is great—it’s just about finding the right balance.",
       },
     ],
   },
@@ -148,7 +155,7 @@ export default function Home() {
   const [activeScenarioIndex, setActiveScenarioIndex] = useState(0);
   const isMobile = useIsMobile()
   const intervalRef = useRef<any>(null);
-  const typedText = useTypewriter("Did you see Timothée Chalamet at the Oscars? It was... something else", 20);
+  const typedText = useTypewriter("AI VC: So, I’ve looked through the pitch deck you sent me… honestly, why would anyone fund this? I’ve seen 10 tools like yours this week.", 20);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -200,22 +207,13 @@ export default function Home() {
         <section className="relative pt-20 pb-32 overflow-hidden">
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col items-center justify-center">
-              {/*<div className="inline-flex items-center bg-gray-200 rounded-full px-3 py-1 mb-8">*/}
-              {/*  <span className="w-4 h-4 bg-neon rounded-full mr-2"></span>*/}
-              {/*  <span className="text-sm font-medium">We're launching soon</span>*/}
-              {/*  <Link href="#waitlist" className="text-sm text-neon ml-2 font-medium">*/}
-              {/*    Join waitlist →*/}
-              {/*  </Link>*/}
-              {/*</div>*/}
 
-              <h1 className="text-5xl md:text-7xl py-9 font-bold tracking-tight mb-6 text-center max-w-4xl">
-                Master English with
-                <br />
-                <span className="text-neon">AI conversations</span>
+              <h1 className="text-5xl md:text-6xl py-9 font-bold tracking-tight mb-6 text-center max-w-4xl">
+                Your AI Copilot for <br /><span className="text-neon">Professional Communication</span><br /> in any language
               </h1>
 
               <p className="text-xl text-medium mb-8 max-w-2xl text-center">
-                Overcome the language barrier with an AI tutor that understands you
+                Built for advanced language learners who need to lead, pitch, and persuade under pressure — in a second language.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -225,7 +223,7 @@ export default function Home() {
                   asChild
                 >
                   <Link href="https://app.explorelabs.tech">
-                    <span className="text-xl">Start learning</span>
+                    <span className="text-xl">Try Explore for Free</span>
                   </Link>
                 </Button>
                 <Button
@@ -250,7 +248,7 @@ export default function Home() {
                         <div className="flex-1 overflow-y-auto space-y-4">
                           <div className="mt-16 px-8 text-sm mb-2 text-center">{typedText}</div>
                           <div
-                            className="top-44 opacity-90 recording-box absolute h-56 w-56 left-6 rounded-[50%] p-[12%] pt-[17%] record-animation"
+                            className="top-46 opacity-90 recording-box absolute h-56 w-56 left-6 rounded-[50%] p-[12%] pt-[17%] record-animation"
                           >
                             <div
                               className="h-full w-full rounded-[50%]"
@@ -284,39 +282,37 @@ export default function Home() {
               <div className="flex flex-col md:flex-row gap-16">
                 <div className="flex-1">
                   <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center md:text-left">
-                    Traditional language apps <span className="text-neon">suck</span>
+                    Fluency isn’t enough. Professionals need to <span className="text-neon">perform</span>
                   </h2>
                   <p className="text-xl text-medium mb-8 text-center md:text-left">
-                    They focus on vocabulary and grammar, but <span className="text-neon">fail miserably</span> at
-                    preparing you for real conversations.
+                     Even advanced language learners struggle to <span className="text-neon">lead, pitch, or persuade</span> in a second language when the stakes are high.
                   </p>
                 </div>
                 <div className="flex-1">
                   <div className="space-y-8">
                     <ThreeDCard>
                       <div className="light-card p-6 rounded-xl backdrop-blur-sm">
-                        <div className="text-2xl font-bold mb-3">No real speaking practice</div>
+                        <div className="text-2xl font-bold mb-3">Apps teach grammar, not performance</div>
                         <p className="text-medium">
-                          Most apps don't let you practice actual conversations in contexts that{" "}
-                          <span className="text-neon">matter to you</span>.
+                          They don’t prepare you for meetings, interviews, or <span className="text-neon">real-time</span> conversations.
                         </p>
                       </div>
                     </ThreeDCard>
                     <ThreeDCard>
                       <div className="light-card p-6 rounded-xl backdrop-blur-sm">
-                        <div className="text-2xl font-bold mb-3">Generic scenarios</div>
+                        <div className="text-2xl font-bold mb-3">Tutors lack context and don’t scale</div>
                         <p className="text-medium">
-                          Pre-made dialogues don't match your specific needs or interests.{" "}
-                          <span className="text-neon">Boring!</span>
+                          They can’t support day-to-day work or field-specific {" "}
+                          <span className="text-neon">challenges.</span>
                         </p>
                       </div>
                     </ThreeDCard>
                     <ThreeDCard>
                       <div className="light-card p-6 rounded-xl backdrop-blur-sm">
-                        <div className="text-2xl font-bold mb-3">No personalized feedback</div>
+                        <div className="text-2xl font-bold mb-3">AI tools edit, but don’t coach</div>
                         <p className="text-medium">
-                          You don't get real-time corrections on your specific mistakes.{" "}
-                          <span className="text-neon">How will you improve?</span>
+                          They fix grammar, but not delivery, tone, or{" "}
+                          <span className="text-neon">confidence.</span>
                         </p>
                       </div>
                     </ThreeDCard>
@@ -333,8 +329,8 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                  <span className="text-neon">Explore</span> is your safe space for English practice
+                <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                  <span className="text-neon">Explore</span> is an AI copilot for professionals who use a second language to succeed at work.
                 </h2>
                 <p className="text-xl text-medium max-w-2xl mx-auto">
                   Discuss any topic you are <span className="text-neon">passionate</span> about and get instant feedback
@@ -423,11 +419,10 @@ export default function Home() {
                             <span className="text-neon mr-2">
                               <Image src={Star4} width={20} height={20} alt="" />
                             </span>
-                            Real-time Corrections
+                            Practice high-pressure scenarios in your field
                           </h4>
                           <p className="text-medium">
-                            Get instant feedback on your grammar, vocabulary, and pronunciation mistakes as you practice
-                            conversations.
+                            From presentations to negotiations
                           </p>
                         </div>
 
@@ -436,11 +431,10 @@ export default function Home() {
                             <span className="text-neon mr-2">
                               <Image src={Star4} width={20} height={20} alt="" />
                             </span>
-                            Discuss anything
+                            Master strategic communication
                           </h4>
                           <p className="text-medium">
-                            Choose from a variety of scenarios or create your own custom conversations based on your
-                            specific needs and interests.
+                            Refine tone, delivery, and structure
                           </p>
                         </div>
 
@@ -449,11 +443,10 @@ export default function Home() {
                             <span className="text-neon mr-2">
                               <Image src={Star4} width={20} height={20} alt="" />
                             </span>
-                            Practice Anytime
+                            Perform with precision in any language you use at work
                           </h4>
                           <p className="text-medium">
-                            Available 24/7, allowing you to practice English conversations whenever and wherever you
-                            want, at your own pace.
+                            English, German, and more
                           </p>
                         </div>
                       </div>
@@ -487,10 +480,9 @@ export default function Home() {
                       1
                     </div>
                     <div className="pt-6">
-                      <h3 className="text-2xl font-bold mb-4 text-center">Create Your Scenario</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-center">Choose your scenario</h3>
                       <p className="text-medium text-center">
-                        Select from templates or create your own <span className="text-neon">custom</span> conversation
-                        scenarios.
+                        Select real-world situations, from presentations to <span className="text-neon">industry-specific</span> emails and negotiations.
                       </p>
                     </div>
                   </div>
@@ -502,9 +494,9 @@ export default function Home() {
                       2
                     </div>
                     <div className="pt-6">
-                      <h3 className="text-2xl font-bold mb-4 text-center">Practice Speaking</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-center">Talk to your AI copilot</h3>
                       <p className="text-medium text-center">
-                        Practice dialogues that prepare you for <span className="text-neon">real-world</span> situations.
+                        Engage in personalized speaking practice that <span className="text-neon">adapts</span> to your needs in real-time.
                       </p>
                     </div>
                   </div>
@@ -516,10 +508,9 @@ export default function Home() {
                       3
                     </div>
                     <div className="pt-6">
-                      <h3 className="text-2xl font-bold mb-4 text-center">Get Detailed Feedback</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-center">Get instant feedback</h3>
                       <p className="text-medium text-center">
-                        Review your conversation with highlighted mistakes and{" "}
-                        <span className="text-neon">crystal-clear</span> explanations.
+                        Receive actionable insights on clarity, tone, structure, and language. <span className="text-neon">Improve</span> both your speaking and writing to fit the demands of your industry.
                       </p>
                     </div>
                   </div>
@@ -539,47 +530,43 @@ export default function Home() {
                   Why choose <span className="text-neon">Explore</span>
                 </h2>
                 <p className="text-xl text-medium max-w-full mx-auto">
-                  Our unique approach to language learning <span className="text-neon">blows</span> the competition away
+                  Go beyond grammar — we help you <span className="text-neon">drive</span> your career forward
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Designed just for you</div>
+                    <div className="text-2xl font-bold mb-4">Context-Aware</div>
                     <p className="text-medium">
-                      Practice exactly what you need based on your interests, profession, and learning goals.{" "}
-                      <span className="text-neon">No more generic lessons!</span>
+                      Fine-tune your copilot by adding your <span className="text-neon">own content</span>, ensuring personalized feedback tailored to your specific goals.
                     </p>
                   </div>
                 </ThreeDCard>
 
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Real-World Conversations</div>
+                    <div className="text-2xl font-bold mb-4">Industry-Specific Practice</div>
                     <p className="text-medium">
-                      Practice authentic dialogues that prepare you for actual situations you'll encounter.{" "}
-                      <span className="text-neon">Be ready for anything!</span>
+                      Sharpen your <span className="text-neon">communication</span> with scenarios like client presentations, negotiations, or team meetings.
                     </p>
                   </div>
                 </ThreeDCard>
 
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Instant Feedback</div>
+                    <div className="text-2xl font-bold mb-4">High-Stakes Performance</div>
                     <p className="text-medium">
-                      Receive immediate corrections and explanations to help you improve faster.{" "}
-                      <span className="text-neon">Learn from your mistakes!</span>
+                      Simulate real pressure and <span className="text-neon">get feedback</span> on tone, clarity, and structure for critical career moments.
                     </p>
                   </div>
                 </ThreeDCard>
 
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Available 24/7</div>
+                    <div className="text-2xl font-bold mb-4">Integrated Into Your Workflow</div>
                     <p className="text-medium">
-                      Practice whenever you want, as much as you want, without scheduling constraints.{" "}
-                      <span className="text-neon">Your time, your rules!</span>
+                      Practice language skills in real-time as you prepare for meetings, emails, or presentations — <span className="text-neon">no extra time needed.</span>
                     </p>
                   </div>
                 </ThreeDCard>
@@ -595,11 +582,10 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                <span className="text-neon">Unleash</span> your English power <span className="text-neon">now</span>
+                Master <span className="text-neon">high-impact</span> communication in any language
               </h2>
               <p className="text-xl text-medium mb-8 max-w-2xl mx-auto">
-                Be among the first to experience Explore and take your English speaking skills to the{" "}
-                <span className="text-neon">next level</span>.
+                Get started with Explore and <span className="text-neon">master</span> the art of high-stakes conversations.
               </p>
               <ThreeDCard>
                 <div className="light-card p-8 rounded-2xl backdrop-blur-md">
