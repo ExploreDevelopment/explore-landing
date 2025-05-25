@@ -604,7 +604,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="waitlist" className="py-24 relative">
+        <section id="pricing" className="py-24 relative">
           <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-neon/50 to-transparent"></div>
           <div className="absolute inset-0 bg-neon/5"></div>
           <div className="container mx-auto px-4 relative z-10">
