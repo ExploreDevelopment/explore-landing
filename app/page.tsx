@@ -209,11 +209,11 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center">
 
               <h1 className="text-5xl md:text-6xl py-9 font-bold tracking-tight mb-6 text-center max-w-4xl">
-                Your AI Copilot for <br /><span className="text-neon">Professional Communication</span><br /> in any language
+                Close like an <span className="text-neon">American</span>.<br /> <span className="text-neon">Even if</span> English isn’t your first language
               </h1>
 
               <p className="text-xl text-medium mb-8 max-w-2xl text-center">
-                Built for advanced language learners who need to lead, pitch, and persuade under pressure — in a second language.
+                Sharpen your English delivery in sales calls to close more deals in global markets
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
@@ -330,11 +330,10 @@ export default function Home() {
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-neon">Explore</span> is an AI copilot for professionals who use a second language to succeed at work.
+                  <span className="text-neon">Explore</span> is for non-native sales reps who know their weak English is costing them deals.
                 </h2>
                 <p className="text-xl text-medium max-w-2xl mx-auto">
-                  Discuss any topic you are <span className="text-neon">passionate</span> about and get instant feedback
-                  to improve your fluency.
+                  Practice real sales conversations, fix weak phrasing, and get instant feedback to <span className="text-neon">improve</span> your pitch delivery.
                 </p>
               </div>
 
@@ -467,7 +466,7 @@ export default function Home() {
                 How <span className="text-neon">Explore</span> works
               </h2>
               <p className="text-xl text-medium max-w-2xl mx-auto">
-                A simple three-step process to <span className="text-neon">skyrocket</span> your English speaking skills
+                A simple three-step process to <span className="text-neon">skyrocket</span> your English sales calls
               </p>
             </div>
 
@@ -480,9 +479,9 @@ export default function Home() {
                       1
                     </div>
                     <div className="pt-6">
-                      <h3 className="text-2xl font-bold mb-4 text-center">Choose your scenario</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-center">Analyze your real sales calls</h3>
                       <p className="text-medium text-center">
-                        Select real-world situations, from presentations to <span className="text-neon">industry-specific</span> emails and negotiations.
+                        Get <span className="text-neon">instant feedback</span> on phrasing, tone, and delivery — so you know exactly what’s costing you the deal.
                       </p>
                     </div>
                   </div>
@@ -494,9 +493,9 @@ export default function Home() {
                       2
                     </div>
                     <div className="pt-6">
-                      <h3 className="text-2xl font-bold mb-4 text-center">Talk to your AI copilot</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-center">Practice with your AI pitch coach</h3>
                       <p className="text-medium text-center">
-                        Engage in personalized speaking practice that <span className="text-neon">adapts</span> to your needs in real-time.
+                        Actionable feedback that <span className="text-neon">changes</span> how you speak — starting with your very next call
                       </p>
                     </div>
                   </div>
@@ -508,9 +507,9 @@ export default function Home() {
                       3
                     </div>
                     <div className="pt-6">
-                      <h3 className="text-2xl font-bold mb-4 text-center">Get instant feedback</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-center">Simulate real sales calls for your role and industry</h3>
                       <p className="text-medium text-center">
-                        Receive actionable insights on clarity, tone, structure, and language. <span className="text-neon">Improve</span> both your speaking and writing to fit the demands of your industry.
+                        Master pitches, objections, and buyer questions — <span className="text-neon">fast</span>
                       </p>
                     </div>
                   </div>
@@ -530,43 +529,43 @@ export default function Home() {
                   Why choose <span className="text-neon">Explore</span>
                 </h2>
                 <p className="text-xl text-medium max-w-full mx-auto">
-                  Go beyond grammar — we help you <span className="text-neon">drive</span> your career forward
+                  We don’t just fix your English — <span className="text-neon">we help you</span> sound like a closer and <span className="text-neon">feel confident</span> on every call
                 </p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Context-Aware</div>
+                    <div className="text-2xl font-bold mb-4">Call-Specific Coaching</div>
                     <p className="text-medium">
-                      Fine-tune your copilot by adding your <span className="text-neon">own content</span>, ensuring personalized feedback tailored to your specific goals.
+                      Train on your <span className="text-neon">real sales scripts</span> and get feedback to sound sharp every time you pitch
                     </p>
                   </div>
                 </ThreeDCard>
 
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Industry-Specific Practice</div>
+                    <div className="text-2xl font-bold mb-4">Sales Scenario Simulations</div>
                     <p className="text-medium">
-                      Sharpen your <span className="text-neon">communication</span> with scenarios like client presentations, negotiations, or team meetings.
+                      Practice discovery, demos, and objections — so you're <span className="text-neon">calm and confident</span> when it counts
                     </p>
                   </div>
                 </ThreeDCard>
 
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">High-Stakes Performance</div>
+                    <div className="text-2xl font-bold mb-4">Built for High-Stakes Performance</div>
                     <p className="text-medium">
-                      Simulate real pressure and <span className="text-neon">get feedback</span> on tone, clarity, and structure for critical career moments.
+                      Master <span className="text-neon">high-pressure moments</span> — cold opens, objections, and pricing. Sound sharp when the deal’s on the line
                     </p>
                   </div>
                 </ThreeDCard>
 
                 <ThreeDCard>
                   <div className="light-card rounded-2xl p-8 backdrop-blur-sm hover:bg-white transition-colors h-full">
-                    <div className="text-2xl font-bold mb-4">Integrated Into Your Workflow</div>
+                    <div className="text-2xl font-bold mb-4">Fits Into Your Sales Workflow</div>
                     <p className="text-medium">
-                      Practice language skills in real-time as you prepare for meetings, emails, or presentations — <span className="text-neon">no extra time needed.</span>
+                      Explore <span className="text-neon">integrates</span> with your AI notetaker — so you get feedback after every call, effortlessly
                     </p>
                   </div>
                 </ThreeDCard>
@@ -582,7 +581,7 @@ export default function Home() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                Master <span className="text-neon">high-impact</span> communication in any language
+                You <span className="text-neon">don’t</span> get a second chance on a sales call
               </h2>
               <p className="text-xl text-medium mb-8 max-w-2xl mx-auto">
                 Get started with Explore and <span className="text-neon">master</span> the art of high-stakes conversations.
@@ -622,20 +621,20 @@ export default function Home() {
                   <div className="light-card rounded-2xl p-8 h-full flex flex-col">
                     <div className="mb-8">
                       <h3 className="text-2xl font-bold mb-2">Basic</h3>
-                      <p className="text-medium">Perfect for beginners</p>
+                      <p className="text-medium">Perfect for getting started</p>
                     </div>
                     <div className="text-4xl font-bold mb-6">
                       $19.99<span className="text-medium text-lg">/month</span>
                     </div>
                     <ul className="space-y-4 mb-8 flex-grow">
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Up 30 personalized AI companions
+                        <span className="text-neon">✓</span> Limited number of AI simulations
                       </li>
                       <li className="flex items-center gap-2 text-medium">
                         <span className="text-neon">✓</span> Limited daily speaking practice
                       </li>
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Personalized feedback and corrections
+                        <span className="text-neon">✓</span> Personalised feedback on tone, clarity, and grammar
                       </li>
                     </ul>
                     <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>
@@ -652,23 +651,23 @@ export default function Home() {
                     </div>
                     <div className="mb-8">
                       <h3 className="text-2xl font-bold mb-2">Premium</h3>
-                      <p className="text-medium">Most popular choice</p>
+                      <p className="text-medium">Most popular</p>
                     </div>
                     <div className="text-4xl font-bold mb-6">
                       $34.99<span className="text-medium text-lg">/month</span>
                     </div>
                     <ul className="space-y-4 mb-8 flex-grow">
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Unlimited number of AI companions
+                        <span className="text-neon">✓</span> Unlimited number of AI simulations
                       </li>
                       <li className="flex items-center gap-2 text-medium">
                         <span className="text-neon">✓</span> Unlimited daily speaking practice
                       </li>
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Realtime calls practice
+                        <span className="text-neon">✓</span> Realtime call coaching — integration with your AI notetaker
                       </li>
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Personalized feedback and corrections
+                        <span className="text-neon">✓</span> Personalised feedback on tone, clarity, and grammar
                       </li>
                     </ul>
                     <Button className="w-full bg-neon hover:bg-neon/90" size="lg" asChild>
@@ -689,16 +688,16 @@ export default function Home() {
                     </div>
                     <ul className="space-y-4 mb-8 flex-grow">
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Unlimited number of AI companions
+                        <span className="text-neon">✓</span> Unlimited number of AI simulations
                       </li>
                       <li className="flex i tems-center gap-2 text-medium">
                         <span className="text-neon">✓</span> Unlimited daily speaking practice
                       </li>
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Realtime calls practice
+                        <span className="text-neon">✓</span> Realtime call coaching — integration with your AI notetaker
                       </li>
                       <li className="flex items-center gap-2 text-medium">
-                        <span className="text-neon">✓</span> Personalized feedback and corrections
+                        <span className="text-neon">✓</span> Personalised feedback on tone, clarity, and grammar
                       </li>
                     </ul>
                     <Button className="w-full bg-black hover:bg-black/90" size="lg" asChild>
